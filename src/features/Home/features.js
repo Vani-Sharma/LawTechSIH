@@ -1,4 +1,4 @@
-export const FeatuesComponent = () => {
+export const FeaturesComponent = () => {
   return (
     <div className="grid grid-cols-4 gap-4 bg-[#d9e0ec33] py-10 px-8 mt-10">
       <div className="flex flex-col border-solid border-2 p-4">

@@ -1,7 +1,7 @@
 import React from "react";
-import img from "./cuate.jpg";
-import lawyer from "./lawyers.png";
-import { FeatuesComponent } from "./features";
+import img from "../../img/cuate.jpg";
+import lawyer from "../../img/lawyers.png";
+import { FeaturesComponent } from "./features";
 export const LandingPageComponent = () => {
   return (
     <div className="flex-auto mt-8">
@@ -36,7 +36,7 @@ export const LandingPageComponent = () => {
           <img src={img} className="object-contain" alt="hiii" />
         </div>
       </div>
-      <FeatuesComponent />
+      <FeaturesComponent />
       <div class="flex-auto mt-10 mb-10 mx-8 bg-[#F2F2FE] rounded">
         <div className="grid grid-cols-2 gap-4">
           <div className="flex flex-col p-8 items-start lg:ml-14">
