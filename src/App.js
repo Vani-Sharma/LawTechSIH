@@ -1,12 +1,10 @@
 import React from "react";
-import { HeaderComponent } from "./features/header";
-import { LandingPageComponent } from "./features/Home";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
     <div className="App">
-      <HeaderComponent />
-      <LandingPageComponent />
+      <HomePage></HomePage>
     </div>
   );
 }

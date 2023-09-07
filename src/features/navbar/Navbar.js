@@ -1,67 +1,31 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import {
-  decrement,
-  increment,
-  incrementByAmount,
-  incrementAsync,
-  incrementIfOdd,
-  selectCount,
-} from './counterSlice';
-import styles from './Counter.module.css';
-
-export function Counter() {
-  const count = useSelector(selectCount);
-  const dispatch = useDispatch();
-  const [incrementAmount, setIncrementAmount] = useState('2');
-
-  const incrementValue = Number(incrementAmount) || 0;
-
+export const Navbar = () => {
   return (
-    <div>
-      <div className={styles.row}>
-        <button
-          className={styles.button}
-          aria-label="Decrement value"
-          onClick={() => dispatch(decrement())}
-        >
-          -
-        </button>
-        <span className={styles.value}>{count}</span>
-        <button
-          className={styles.button}
-          aria-label="Increment value"
-          onClick={() => dispatch(increment())}
-        >
-          +
-        </button>
+    <>
+      <div className="flex flex-row p-2 items-center my-3">
+        <div className="text-2xl font-extrabold text-[#3D00B7] ml-8 lg:mr-16 mr-10">
+          ABC
+        </div>
+        <div className="flex flex-row text-md">
+          <div className="lg:mr-8 mr-5">Find a Lawyer</div>
+          <div className="lg:mr-8 mr-5">Get Started</div>
+          <div className="lg:mr-8 mr-5">Other services</div>
+        </div>
+        <div className="flex flex-auto justify-end">
+          <input
+            class=" bg-white rounded-[100px] border-2 border-solid border-[#efefef] py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm lg:mr-5 mr-2 w-64 lg:w-80"
+            placeholder="Search for anything..."
+            type="text"
+            name="search"
+          />
+          <button className=" bg-[#3D00B7] text-white rounded-[60px] lr:mr-5 mr-2 px-6 py-0.5 lg:py-2">
+            Login
+          </button>
+          <button className="border-[#3D00B7] text-[#3D00B7] text-md border-2 rounded-[60px] lg:mr-8 px-6 py-0.5 lg:py-2">
+            Create Account
+          </button>
+        </div>
       </div>
-      <div className={styles.row}>
-        <input
-          className={styles.textbox}
-          aria-label="Set increment amount"
-          value={incrementAmount}
-          onChange={(e) => setIncrementAmount(e.target.value)}
-        />
-        <button
-          className={styles.button}
-          onClick={() => dispatch(incrementByAmount(incrementValue))}
-        >
-          Add Amount
-        </button>
-        <button
-          className={styles.asyncButton}
-          onClick={() => dispatch(incrementAsync(incrementValue))}
-        >
-          Add Async
-        </button>
-        <button
-          className={styles.button}
-          onClick={() => dispatch(incrementIfOdd(incrementValue))}
-        >
-          Add If Odd
-        </button>
-      </div>
-    </div>
+      <hr />
+    </>
   );
-}
+};
