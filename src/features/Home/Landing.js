@@ -2,6 +2,8 @@ import React from "react";
 import img from "../../img/cuate.jpg";
 import lawyer from "../../img/lawyers.png";
 import { FeaturesComponent } from "./features";
+import { SearchLawyerComponent } from "./searchLawyer";
+import { DivAnimatedSteps } from "./steps";
 export const LandingPageComponent = () => {
   return (
     <div className="flex-auto mt-8">
@@ -37,9 +39,11 @@ export const LandingPageComponent = () => {
         </div>
       </div>
       <FeaturesComponent />
+      <DivAnimatedSteps />
+      <SearchLawyerComponent />
       <div class="flex-auto mt-10 mb-10 mx-8 bg-[#F2F2FE] rounded">
         <div className="grid grid-cols-2 gap-4">
-          <div className="flex flex-col p-8 items-start lg:ml-14">
+          <div className="flex flex-col p-8 items-start lg:ml-12">
             <div className="text-2xl font-semibold">Are You a Lawyer?</div>
             <div className="mt-3">
               Check out how we can get you more leads for free. Build your brand
