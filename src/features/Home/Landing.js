@@ -58,6 +58,31 @@ export const LandingPageComponent = () => {
           </div>
         </div>
       </div>
+      <div class="flex flex-col mt-10 mb-10 mx-8 items-center">
+        <div className="font-semibold text-2xl mb-2">
+          The Ultimate Legal Ecosystem
+        </div>
+        <div>
+          We cover every step of your legal journey, whether you're a client or
+          a lawyer.
+        </div>
+        <div className="grid grid-cols-2 gap-4 lg:gap-10 mt-10">
+          <div className="flex flex-col items-start py-2 pr-5 pl-2">
+            <div className="font-[600]">Match</div>
+            <div className="text-[#616778] mt-4">Searchable directory of qualified lawyers across India</div>
+            <div className="text-[#9499AA] mt-2">Get instant legal assistance with your issue.</div>
+            <button className="mt-6 text-[#00E]">Find Lawyer  {">"} </button>
+          </div>
+          <div className="flex flex-col items-start py-2 pr-5 pl-2">
+            <div className="font-[600]">Tool</div>
+            <div className="text-[#616778] mt-4">AI-driven tool for contract drafting
+and review</div>
+            <div className="text-[#9499AA] mt-2">Use our software to remove errors and
+have all clauses at hand.</div>
+            <button className="mt-6 text-[#00E]">Try  {">"} </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
