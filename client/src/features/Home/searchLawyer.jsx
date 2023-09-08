@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import { useState } from "react";
 export const SearchLawyerComponent = () => {
   const statesInIndia = [
     "Andhra Pradesh",
