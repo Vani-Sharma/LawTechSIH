@@ -1,3 +1,4 @@
+import { CreateAccount } from "./createAccount";
 export const Navbar = () => {
   return (
     <>
@@ -20,9 +21,7 @@ export const Navbar = () => {
           <button className=" bg-[#3D00B7] text-white rounded-[60px] lr:mr-5 mr-2 px-6 py-0.5 lg:py-2">
             Login
           </button>
-          <button className="border-[#3D00B7] text-[#3D00B7] text-md border-2 rounded-[60px] lg:mr-8 px-6 py-0.5 lg:py-2">
-            Create Account
-          </button>
+          <CreateAccount />
         </div>
       </div>
       <hr />
