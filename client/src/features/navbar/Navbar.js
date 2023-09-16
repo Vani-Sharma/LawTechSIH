@@ -1,4 +1,5 @@
 import { CreateAccount } from "./createAccount";
+import { LoginComponent } from "./login";
 export const Navbar = () => {
   return (
     <>
@@ -18,9 +19,10 @@ export const Navbar = () => {
             type="text"
             name="search"
           />
-          <button className=" bg-[#3D00B7] text-white rounded-[60px] lr:mr-5 mr-2 px-6 py-0.5 lg:py-2">
+          {/* <button className=" bg-[#3D00B7] text-white rounded-[60px] lr:mr-5 mr-2 px-6 py-0.5 lg:py-2">
             Login
-          </button>
+          </button> */}
+          <LoginComponent />
           <CreateAccount />
         </div>
       </div>
