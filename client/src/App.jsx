@@ -1,6 +1,6 @@
 import React from "react";
-import  HomePage from "./pages/HomePage";
-import { LawyerDircectives } from "./pages/LawyerDirectives";
+import HomePage from "./pages/HomePage";
+import { ChatComponent } from "./features/chat/ChatComponent";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 export default function App() {
   return (
@@ -8,7 +8,7 @@ export default function App() {
       <div className="App">
         <Routes>
           <Route exact path="/" element={<HomePage />} />
-          <Route path="/lawyer-directives" element={<LawyerDircectives />} />
+          <Route path="/chat" element={<ChatComponent />} />
         </Routes>
       </div>
     </BrowserRouter>
