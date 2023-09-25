@@ -1,9 +1,5 @@
-install node modules inside frontend folder using npm i
-then cd frontend and npm start
-
-
-
-
+install node modules inside client folder using npm i
+then npm start
 
 # Getting Started with Create React App and Redux
 
