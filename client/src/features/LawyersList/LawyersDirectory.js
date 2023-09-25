@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Navbar } from "../navbar/Navbar";
 import verifiedIcon from "../../img/verifiedicon.png";
+import dollar from "../../img/dollar.png";
+import realtime from "../../img/realtime.png";
+import location from "../../img/location.png";
+import scales from "../../img/scales.png";
+import { FooterComponent } from "../footer/footer";
 const people = [
   {
     name: "Leslie Alexander",
@@ -144,13 +149,13 @@ export function LawyerDirectory() {
           </button>
         </div>
         <div>
-          <ul role="list" className="my-15">
+          <ul role="list" className="my-15 mx-20">
             {people.map((person) => (
               <li key={person.email} className="py-10">
                 <div className="flex justify-around py-3">
                   <div className="flex min-w-0 gap-x-4">
                     <img
-                      className="h-28 w-28 flex-none rounded-full bg-gray-50"
+                      className="h-32 w-32 flex-none rounded-full bg-gray-50"
                       src={person.imageUrl}
                       alt=""
                     />
@@ -206,17 +211,21 @@ export function LawyerDirectory() {
                             <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
                           </svg>
                         </div>
-                        <p className="mt-5 truncate leading-5 text-gray-500">
-                          <span>
-                            <img src={verifiedIcon}></img>
+                        <p className="mt-5 flex truncate leading-5 ">
+                          <img src={verifiedIcon}></img>
+                          <span className="ml-2">
+                            Contracts Counsel verified
                           </span>
-                          <span> Contracts Counsel verified</span>
                         </p>
-                        <p className="mt-5 truncate leading-5 text-gray-500">
-                          Des Moines, IA
+                        <p className="mt-5 truncate leading-5 flex">
+                          <img src={location}></img>{" "}
+                          <span className="ml-2">Des Moines, IA </span>
                         </p>
-                        <p className="mt-5 truncate leading-5 text-gray-500">
-                          Massachusetts, New Hampshire
+                        <p className="mt-5 truncate leading-5 flex">
+                          <img src={scales}></img>{" "}
+                          <span className="ml-2">
+                            Massachusetts, New Hampshire{" "}
+                          </span>
                         </p>
                       </div>
                     </div>
@@ -229,12 +238,14 @@ export function LawyerDirectory() {
                       Schedule a call
                     </button>
 
-                    <p className="mt-6 leading-5 text-gray-500">
-                      15 Years practicing
+                    <p className="mt-6 leading-5 flex">
+                      <img src={realtime}></img>
+                      <span className="ml-2">15 Years practicing</span>
                     </p>
 
                     <div className="mt-5 flex items-center gap-x-1.5">
-                      <p className=" leading-5 text-gray-500">$225.00 / hour</p>
+                      <img src={dollar}></img>
+                      <p className=" leading-5">225.00 / hour</p>
                     </div>
                   </div>
                 </div>
@@ -244,6 +255,7 @@ export function LawyerDirectory() {
           </ul>
         </div>
       </div>
+      <FooterComponent></FooterComponent>
     </>
   );
 }
