@@ -149,7 +149,10 @@ export function LawyerDirectory() {
           </button>
         </div>
         <div>
-          <ul role="list" className="my-15 mx-20">
+          <h1 className="text-center text-3xl font-semibold">
+            Workers' Compensation Lawyers Near You
+          </h1>
+          <ul role="list" className="my-15 mx-52">
             {people.map((person) => (
               <li key={person.email} className="py-10">
                 <div className="flex justify-around py-3">
@@ -231,10 +234,10 @@ export function LawyerDirectory() {
                     </div>
                   </div>
                   <div className="shrink-0 sm:flex sm:flex-col sm:items-end">
-                    <button className="border-[#3D00B7] font-semibold text-[#3D00B7] text-md border-2 rounded-[60px] lg:mr-8 px-6 py-0.5 lg:py-2">
+                    <button className="border-[#3D00B7] text-sm font-semibold text-[#3D00B7] text-md border-2 rounded-[60px] lg:mr-8 px-6 py-0.5 lg:py-2">
                       View Profile
                     </button>
-                    <button className=" bg-[#3D00B7] text-white rounded-[60px] lr:mr-5 mr-2 px-6 py-0.5 lg:py-2">
+                    <button className=" bg-[#3D00B7] text-sm text-white rounded-[60px] lr:mr-5 mr-2 px-6 py-0.5 lg:py-2">
                       Schedule a call
                     </button>
 
@@ -249,7 +252,7 @@ export function LawyerDirectory() {
                     </div>
                   </div>
                 </div>
-                <div className="mx-56 my-5">{person.description}</div>
+                <div className="mx-24 my-5">{person.description}</div>
               </li>
             ))}
           </ul>
