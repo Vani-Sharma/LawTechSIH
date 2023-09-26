@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Navbar } from "../navbar/Navbar";
 import verifiedIcon from "../../img/verifiedicon.png";
@@ -7,6 +7,18 @@ import realtime from "../../img/realtime.png";
 import location from "../../img/location.png";
 import scales from "../../img/scales.png";
 import { FooterComponent } from "../footer/footer";
+import Pagination from "../../pages/Pagination";
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  ChevronDownIcon,
+  FunnelIcon,
+  MinusIcon,
+  PlusIcon,
+  StarIcon,
+  Squares2X2Icon,
+} from "@heroicons/react/20/solid";
+const ITEMS_PER_PAGE = 9;
 const people = [
   {
     name: "Leslie Alexander",
@@ -74,12 +86,13 @@ const people = [
   },
 ];
 
+const totalItems = 10;
 export function LawyerDirectory() {
   return (
     <>
       <Navbar />
       <div className="flex-auto mt-8 justify-content">
-        <div className="flex m-12 justify-center">
+        <div className="flex mt-12 justify-center">
           <div className="flex bg-[#F6F7FA]">
             <div class="grid place-items-center h-full w-12 text-gray-600">
               <svg
@@ -148,8 +161,22 @@ export function LawyerDirectory() {
             </div>
           </button>
         </div>
-        <div>
-          <h1 className="text-center text-3xl font-semibold">
+        <div className="flex m-5 mx-80 mb-10">
+          <button className="ml-8 bg-[#3D00B7] text-sm text-white rounded-[60px] lr:mr-5 mr-2 px-6 py-0.5 lg:py-1">
+            Practice Area
+          </button>
+          <button className=" text-sm border rounded-[60px] lr:mr-5 mr-2 px-4 py-0.5 lg:py-1">
+            State
+          </button>
+          <button className=" text-sm border rounded-[60px] lr:mr-5 mr-2 px-4 py-0.5 lg:py-1">
+            Price
+          </button>
+          <button className=" text-sm border rounded-[60px] lr:mr-5 mr-2 px-4 py-0.5 lg:py-1">
+            Sort
+          </button>
+        </div>
+        <div className="mt-32 ">
+          <h1 className="text-center mb-10 text-3xl font-semibold">
             Workers' Compensation Lawyers Near You
           </h1>
           <ul role="list" className="my-15 mx-52">
@@ -258,6 +285,7 @@ export function LawyerDirectory() {
           </ul>
         </div>
       </div>
+      <Pagination></Pagination>
       <FooterComponent></FooterComponent>
     </>
   );
