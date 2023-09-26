@@ -1,6 +1,9 @@
 import pandas as pd
 import random
+import os
+from dotenv import load_dotenv, find_dotenv
 
+load_dotenv(find_dotenv())
 # Define possible values for each field
 names = ["Aarav", "Aarushi", "Abhinav", "Aditi", "Advait", "Aishwarya", "Akshay", "Amrita",
     "Ananya", "Aniket", "Anisha", "Ankit", "Ansh", "Anushka", "Arjun", "Aryan",
@@ -1525,7 +1528,7 @@ def get_case_description(msg):
     import openai
     import spacy
     import json
-    api_key = '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'  # Replace with your actual API key
+    api_key = os.environ.get("OPEN_API_KEY") # Replace with your actual API key
     openai.api_key = api_key
     #output=openai.ChatCompletion.create(model="gpt-3.5-turbo",messages=[{"role":"user","content":"My friend murdered my father because he was not able to pay the loan of rs 5 lakhs. I reside in noida district Suggest type of lawyer, type of court, and court location for it.give only set as output of the form [a,b,c] and select type of lawyer from following list : Intellectual Property Lawyer, Public Interest Lawyer, Tax Lawyer, Corporate Lawyers, Immigration Lawyers, Criminal Lawyer, Civil Rights Lawyer, Family Lawyer, Environmental Lawyer, Entertainment Lawyer, Estate Planning Lawyer, Civil Litigation Lawyers, Constitutional Lawyers, Real Estate Lawyers, Estate Planning Lawyers, Bankruptcy Lawyers, Labor Lawyers, Malpractice Lawyers, Personal Injury Lawyers, Toxic Tort Lawyers, Family Lawyers, Contract Lawyer, Employment Lawyer"}])
     #print(output)
@@ -1618,7 +1621,7 @@ def get_case_description(msg):
     # print(content_set)
     # print(sorted_df)
         # Define the type of places you're interested in (e.g., courts)
-    return sorted_df.to_json()
+    return sorted_df.to_json(orient="records")
     # Define a function to send a prompt to ChatGPT API
     #import openai
 
