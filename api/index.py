@@ -1,6 +1,10 @@
 from flask import Flask, request
 from bot import get_case_description
+from flask_cors import CORS
+
 app = Flask(__name__)
+CORS(app)
+
 # ans=get_case_description("murder")
 # print(ans)
 @app.route("/", methods=["POST"])

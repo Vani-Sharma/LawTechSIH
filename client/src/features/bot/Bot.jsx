@@ -41,8 +41,8 @@ export function Bot() {
                 chats: chats,
             })
             .then((res) => {
-                console.log(res);
-                setChats([...chats, { message: res.data, author: "bot" }]);
+                console.log(res.data);
+                setChats([...chats, { message: JSON.stringify(res.data), author: "bot" }]);
                 setInput("");
                 setLoading(false);
                 setInputEnabled(true);
