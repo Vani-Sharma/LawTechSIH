@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Navbar } from "../navbar/Navbar";
+import axios from "axios";
 
 import { FooterComponent } from "../footer/footer";
 
@@ -32,26 +33,35 @@ export function Bot() {
         setLoading(true);
         setInputEnabled(false);
 
-        console.log({ question: input, chats: chats });
+        console.log({ msg: input, chats: chats });
 
-        setTimeout(() => {
-            setChats([
-                ...chats,
-                {
-                    message: input,
-                    author: "user",
-                },
-                {
-                    message: "Sorry, I don't understand that yet.",
-                    author: "bot",
-                },
-            ]);
-            setInput("");
-            setLoading(false);
-            setInputEnabled(true);
-            inputRef.current?.focus();
-        }
-            , 1000);
+        axios
+            .post("http://localhost:5000/", {
+                msg: input,
+                chats: chats,
+            })
+            .then((res) => {
+                console.log(res);
+                setChats([...chats, { message: res.data, author: "bot" }]);
+                setInput("");
+                setLoading(false);
+                setInputEnabled(true);
+                inputRef.current?.focus();
+            })
+            .catch((err) => {
+                console.log(err);
+                setChats([
+                    ...chats,
+                    {
+                        message: "Sorry, I didn't get that. Please try again.",
+                    },
+                ])
+                setInput("");
+                setLoading(false);
+                setInputEnabled(true);
+                inputRef.current?.focus();
+            }
+            );
     };
 
     const handleKeyDown = (e) => {
@@ -154,7 +164,7 @@ export function Bot() {
                                     className="w-full bg-transparent text-base font-medium text-gray-400 outline-none placeholder:text-gray-400"
                                     placeholder="Type your message here..."
                                 />
-                                {/* <SearchIcon size={21} className="mr-4" onClick={handleSubmit} /> */}
+                                <button type="submit" size={21} className="mr-4" onClick={handleSubmit} />
                             </div>
                         )}
                     </div>
