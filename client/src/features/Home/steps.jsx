@@ -2,6 +2,8 @@ import React from "react";
 import group from "../../img/Group.svg";
 import explore from "../../img/explore.png";
 import begin_issue from "../../img/begin_issue.png";
+import { Link } from "react-router-dom";
+
 export const DivAnimatedSteps = () => {
   return (
     <div className="flex-auto mt-10 mb-10 mx-8">
@@ -12,7 +14,7 @@ export const DivAnimatedSteps = () => {
             Use our AI powered chatbot to explore and find the attorney to get
             legal advice or assistance with your issue.
           </div>
-          <button className="mt-8 bg-[#3D00B7] text-white text-lg py-2 px-5 rounded-[60px]">Launch bot</button>
+          <Link to="/bot" className="mt-8 bg-[#3D00B7] text-white text-lg py-2 px-5 rounded-[60px]">Launch bot</Link>
         </div>
         <div className="grid grid-cols-10">
           <img src={group} className="h-[100%]" alt="a" />
